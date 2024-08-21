@@ -23,7 +23,7 @@ void main() {
           create: (context) => UserBloc(userRepository: userRepository),
         ),
       ],
-      child: MyApp(),
+      child: const MyApp(),
     ),
   );
 }

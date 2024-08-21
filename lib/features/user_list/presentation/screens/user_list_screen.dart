@@ -10,16 +10,19 @@ class UserListScreen extends StatefulWidget {
 }
 
 class _UserListScreenState extends State<UserListScreen> {
-
   @override
   void initState() {
     super.initState();
     context.read<UserBloc>().add(const UserFetchRequested(page: 1));
   }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text('User List')),
+      appBar: AppBar(
+        automaticallyImplyLeading: false,
+        title: const Text('User List'),
+      ),
       body: BlocBuilder<UserBloc, UserState>(
         builder: (context, state) {
           if (state is UserLoading) {
